@@ -1,0 +1,19 @@
+{
+    "name": "petits_plats",
+    "version": "1.0.0",
+    "description": "Site web de recettes en ligne",
+    "main": "index.js",
+    "scripts": {
+       "sass": "sass --watch ./sass/main.scss:./css/style.css"
+    },
+    "repository": {
+       "type": "git",
+       "url": "git+https://github.com/MiguelParedesJulien/JulienMiguelParedes_7_09092021.git"
+    },
+    "author": "Julien Miguel Paredes",
+    "license": "ISC",
+    "bugs": {
+       "url": "https://github.com/MiguelParedesJulien/JulienMiguelParedes_7_09092021/issues"
+    },
+    "homepage": "https://github.com/MiguelParedesJulien/JulienMiguelParedes_7_09092021#readme"
+ }

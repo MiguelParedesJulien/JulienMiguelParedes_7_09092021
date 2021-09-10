@@ -1,0 +1,73 @@
+:root {
+  font-size: 12px;
+}
+
+.roboto400 {
+  font-family: roboto;
+  font-weight: 400;
+}
+
+.roboto700 {
+  font-family: roboto;
+  font-weight: 700;
+}
+
+.lato400, .search__input {
+  font-family: lato;
+  font-weight: 400;
+}
+
+.lato700 {
+  font-family: lato;
+  font-weight: 700;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+  margin-bottom: 15px;
+}
+
+#logo {
+  background: url(../logo.svg) center center no-repeat;
+  width: 268px;
+  height: 93px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.search__input {
+  width: 100%;
+  height: 69px;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  border: none;
+  padding-left: 20px;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  transition: all 0.4s ease;
+}
+.search__input::placeholder {
+  color: rgba(0, 0, 0, 0.37);
+}
+.search__input:hover {
+  box-shadow: 0 0 0.7rem #e7e7e7, 0 0 1.3rem #e7e7e7, 0 0 2rem #e7e7e7, 0 0 2.8rem #e7e7e7;
+}
+.search__input:focus {
+  box-shadow: 0 0 0.7rem #e7e7e7, 0 0 1.3rem #e7e7e7, 0 0 2rem #e7e7e7, 0 0 2.8rem #e7e7e7;
+  outline-style: none;
+}
+.search__logo {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

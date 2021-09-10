@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="shortcut icon" href="logo.svg" type="image/svg" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+      <title>Les petits plats</title>
+   </head>
+
+   <body>
+      <header>
+         <a href="index.html" aria-label="Logo les petits plats" id="logo"><div id="logo"></div></a>
+      </header>
+
+      <main>
+         <section class="search">
+            <input type="text" class="search__input" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette" />
+            <i class="fas fa-search search__logo"></i>
+         </section>
+         <section class="tag">
+            <div class="tag__blue"></div>
+            <div class="tag__green"></div>
+            <div class="tag__red"></div>
+         </section>
+         <section class="filters">
+            <div class="filters__ingredients">
+               <div class="filters__ingredients__head">
+                  <input type="text" class="filters__ingredients__head-input" placeholder="Ingrédients" maxlength="15" />
+                  <i class="fas fa-chevron-up filters__ingredients__head-arrow"></i>
+               </div>
+
+               <ul class="filters__ingredients__list"></ul>
+            </div>
+            <div class="filters__appareil">
+               <div class="filters__appareil__head">
+                  <input type="text" class="filters__appareil__head-input" placeholder="Appareil" maxlength="15" />
+                  <i class="fas fa-chevron-up filters__appareil__head-arrow"></i>
+               </div>
+
+               <ul class="filters__appareil__list"></ul>
+            </div>
+            <div class="filters__ustensiles">
+               <div class="filters__ustensiles__head">
+                  <input type="text" class="filters__ustensiles__head-input" placeholder="Ustensiles" maxlength="15" />
+                  <i class="fas fa-chevron-up filters__ustensiles__head-arrow"></i>
+               </div>
+
+               <ul class="filters__ustensiles__list"></ul>
+            </div>
+         </section>
+         <div class="recipes"></div>
+      </main>
+
+      <script src="recipes.js"></script>
+   </body>
+</html>
