@@ -1,0 +1,472 @@
+.tag {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   margin-bottom: 15px;
+
+   &__blue {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &__item {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-evenly;
+         min-width: 107px;
+         width: auto;
+         height: 37px;
+         padding: 0 10px;
+         margin-right: 20px;
+         margin-top: 12px;
+         background-color: $secondary;
+         color: #fff;
+         font-size: 1.2rem;
+         border-radius: 5px;
+         // transform: translateX(10px);
+         @extend .lato700;
+         transition: all 0.4s ease;
+         // transform: scale(1);
+
+         &:hover {
+            box-shadow: 0px 0px 3px $secondary, 0px 0px 6px $secondary, 0px 0px 9px $primary;
+            transform: scale(1.02);
+         }
+         &:focus {
+            box-shadow: 0px 0px 3px $secondary, 0px 0px 6px $secondary, 0px 0px 9px $primary;
+         }
+
+         i {
+            font-size: 1.8rem;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background-color: transparent;
+            border-radius: 50%;
+            // transform: scale(1);
+
+            &:hover {
+               box-shadow: 0px 0px 10px white, 0px 0px 20px $primary, 0px 0px 30px $primary, inset 0px 0px 3px white, inset 0px 0px 6px $primary, inset 0px 0px 9px $primary;
+               // transform: scale(1.05);
+            }
+         }
+      }
+   }
+   &__green {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &__item {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-evenly;
+         min-width: 107px;
+         width: auto;
+         height: 37px;
+         padding: 0 10px;
+         margin-right: 20px;
+         margin-top: 12px;
+         background-color: $tertiary;
+         color: #fff;
+         font-size: 1.2rem;
+         border-radius: 5px;
+         @extend .lato700;
+         transition: all 0.4s ease;
+
+         &:hover {
+            box-shadow: 0px 0px 3px $tertiary, 0px 0px 6px $tertiary, 0px 0px 9px $primary;
+         }
+         &:focus {
+            box-shadow: 0px 0px 3px $tertiary, 0px 0px 6px $tertiary, 0px 0px 9px $primary;
+         }
+
+         i {
+            font-size: 1.8rem;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background-color: transparent;
+            border-radius: 50%;
+            // transform: scale(1);
+
+            &:hover {
+               box-shadow: 0px 0px 10px white, 0px 0px 20px $primary, 0px 0px 30px $primary, inset 0px 0px 3px white, inset 0px 0px 6px $primary, inset 0px 0px 9px $primary;
+               // transform: scale(1.05);
+            }
+         }
+      }
+   }
+   &__red {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &__item {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-evenly;
+         min-width: 107px;
+         width: auto;
+         height: 37px;
+         padding: 0 10px;
+         margin-right: 20px;
+         margin-top: 12px;
+         background-color: $quartiary;
+         color: #fff;
+         font-size: 1.2rem;
+         border-radius: 5px;
+         @extend .lato700;
+         transition: all 0.4s ease;
+
+         &:hover {
+            box-shadow: 0px 0px 3px $quartiary, 0px 0px 6px $quartiary, 0px 0px 9px $primary;
+         }
+         &:focus {
+            box-shadow: 0px 0px 3px $quartiary, 0px 0px 6px $quartiary, 0px 0px 9px $primary;
+         }
+
+         i {
+            font-size: 1.8rem;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background-color: transparent;
+            border-radius: 50%;
+            // transform: scale(1);
+
+            &:hover {
+               box-shadow: 0px 0px 10px white, 0px 0px 20px $primary, 0px 0px 30px $primary, inset 0px 0px 3px white, inset 0px 0px 6px $primary, inset 0px 0px 9px $primary;
+               // transform: scale(1.05);
+            }
+         }
+      }
+   }
+}
+
+.blueShadow {
+   box-shadow: 0px 0px 5px $secondary, 0px 0px 10px $secondary, 0px 0px 15px $secondary;
+}
+
+// .noShadow {
+//     box-shadow: unset;
+// }
+
+.filters {
+   margin-top: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   border-radius: 5px;
+   height: auto;
+
+   &__ingredients {
+      background-color: $secondary;
+      border-radius: 5px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      height: max-content;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      // overflow: hidden;
+      position: relative;
+
+      &:hover {
+         box-shadow: 0px 0px 5px $secondary, 0px 0px 10px $secondary, 0px 0px 15px $secondary;
+      }
+      // &:focus {
+      //     box-shadow: 0px 0px 5px $secondary,
+      //                 0px 0px 10px $secondary,
+      //                 0px 0px 15px $secondary;
+      //                 transform: scale(1.2);
+      // }
+
+      &__head {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         min-width: 170px;
+         height: 69px;
+         margin: 0 10px;
+         border-radius: 5px;
+         color: #fff;
+
+         &-input {
+            background-color: $secondary;
+            border: none;
+            color: #fff;
+            @extend .lato700;
+            font-size: 1.5rem;
+            width: 115px;
+
+            &::placeholder {
+               color: #fff;
+               font-size: 1.5rem;
+            }
+
+            &:focus {
+               outline-style: none;
+               width: 250px;
+            }
+
+            &:focus::placeholder {
+               color: $primary;
+               font-size: 1.3rem;
+            }
+         }
+
+         &-arrow {
+            font-size: 1.7rem;
+            margin-right: 10px;
+            transform: rotate(180deg);
+            transition: all 0.5s ease;
+
+            &:hover {
+               transform: rotate(0deg);
+            }
+         }
+      }
+
+      &__list {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         // width: auto;
+         // max-width: 667px;
+         // max-height: 397px;
+         padding-left: 15px;
+         margin-top: -10px;
+         line-height: 2.5rem;
+
+         // display: none;
+         visibility: hidden;
+         width: 0;
+         height: 0;
+         transition: all 0.5s;
+         // z-index: 1;
+         position: absolute;
+         top: 77px;
+         overflow: hidden;
+         background-color: $secondary;
+         z-index: 100;
+
+         &:hover {
+            box-shadow: inherit;
+         }
+
+         &-item {
+            @extend .lato400;
+            font-size: 1.5rem;
+            list-style-type: none;
+            width: 33%;
+            // padding-bottom: 5px;
+            max-height: 50px;
+            cursor: pointer;
+            // z-index: 10000;
+         }
+      }
+   }
+   &__appareil {
+      background-color: $tertiary;
+      border-radius: 5px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+      width: auto;
+      margin-left: 20px;
+      transition: all 0.4s ease;
+      overflow: hidden;
+
+      &:hover {
+         box-shadow: 0px 0px 5px $tertiary, 0px 0px 10px $tertiary, 0px 0px 15px $tertiary;
+      }
+      &:focus {
+         box-shadow: 0px 0px 5px $tertiary, 0px 0px 10px $tertiary, 0px 0px 15px $tertiary;
+      }
+
+      &__head {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         min-width: 170px;
+         height: 69px;
+         margin: 0 10px;
+         border-radius: 5px;
+         color: #fff;
+
+         &-input {
+            background-color: $tertiary;
+            border: none;
+            color: #fff;
+            @extend .lato700;
+            font-size: 1.5rem;
+            width: 115px;
+
+            &::placeholder {
+               color: #fff;
+               font-size: 1.5rem;
+            }
+
+            &:focus {
+               outline-style: none;
+               width: 250px;
+            }
+
+            &:focus::placeholder {
+               color: $primary;
+            }
+         }
+
+         &-arrow {
+            font-size: 1.7rem;
+            margin-right: 10px;
+            transform: rotate(180deg);
+            transition: all 0.5s ease;
+
+            &:hover {
+               transform: rotate(0deg);
+            }
+         }
+      }
+
+      &__list {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         // width: auto;
+         // max-width: 667px;
+         // max-height: 397px;
+         padding-left: 15px;
+         margin-top: -10px;
+         line-height: 2.5rem;
+
+         // display: none;
+         visibility: hidden;
+         width: 0;
+         height: 0;
+         transition: all 0.5s;
+         z-index: 100;
+
+         &-item {
+            @extend .lato400;
+            font-size: 1.5rem;
+            list-style-type: none;
+            width: 33%;
+            // padding-bottom: 5px;
+            max-height: 50px;
+            cursor: pointer;
+         }
+      }
+   }
+   &__ustensiles {
+      background-color: $quartiary;
+      border-radius: 5px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+      width: auto;
+      margin-left: 20px;
+      transition: all 0.4s ease;
+      overflow: hidden;
+
+      &:hover {
+         box-shadow: 0px 0px 5px $quartiary, 0px 0px 10px $quartiary, 0px 0px 15px $quartiary;
+      }
+      &:focus {
+         box-shadow: 0px 0px 5px $quartiary, 0px 0px 10px $quartiary, 0px 0px 15px $quartiary;
+      }
+
+      &__head {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         min-width: 170px;
+         height: 69px;
+         margin: 0 10px;
+         border-radius: 5px;
+         color: #fff;
+
+         &-input {
+            background-color: $quartiary;
+            border: none;
+            color: #fff;
+            @extend .lato700;
+            font-size: 1.5rem;
+            width: 115px;
+
+            &::placeholder {
+               color: #fff;
+               font-size: 1.5rem;
+            }
+
+            &:focus {
+               outline-style: none;
+               width: 250px;
+            }
+
+            &:focus::placeholder {
+               color: $primary;
+            }
+         }
+
+         &-arrow {
+            font-size: 1.7rem;
+            margin-right: 10px;
+            transform: rotate(180deg);
+            transition: all 0.5s ease;
+
+            &:hover {
+               transform: rotate(0deg);
+            }
+         }
+      }
+
+      &__list {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         background-color: $quartiary;
+         color: #fff;
+         // width: auto;
+         // max-width: 667px;
+         // max-height: 397px;
+         padding-left: 15px;
+         margin-top: -10px;
+         line-height: 2.5rem;
+         transition: all 0.5s ease;
+
+         // height: 0;
+         // width: 0;
+         // overflow: hidden;
+
+         // display: none;
+         visibility: hidden;
+         width: 0;
+         height: 0;
+         z-index: 100;
+
+         &-item {
+            @extend .lato400;
+            font-size: 1.5rem;
+            list-style-type: none;
+            width: 33%;
+            // padding-bottom: 5px;
+            max-height: 50px;
+            cursor: pointer;
+         }
+      }
+   }
+}

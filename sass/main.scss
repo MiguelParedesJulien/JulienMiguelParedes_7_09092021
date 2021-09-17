@@ -1,2 +1,6 @@
 @import "./utils/variables";
-@import "./pages/header_index";
+@import "./base/base";
+@import "./base/typography";
+@import "./layout/header_index";
+@import "./pages/filter_index";
+@import "./pages/list_recipes";

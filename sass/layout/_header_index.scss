@@ -1,0 +1,163 @@
+@import "../base/typography.scss";
+
+:root {
+   font-size: 12px;
+}
+
+.roboto400 {
+   font-family: roboto;
+   font-weight: 400;
+}
+.roboto700 {
+   font-family: roboto;
+   font-weight: 700;
+}
+.lato400 {
+   font-family: lato;
+   font-weight: 400;
+}
+.lato700 {
+   font-family: lato;
+   font-weight: 700;
+}
+
+header {
+   display: flex;
+   justify-content: center;
+   margin-top: 42px;
+   margin-bottom: 15px;
+}
+
+#logo {
+   background: url(../logo.svg) center center no-repeat;
+   width: 52px;
+   height: 47px;
+   margin: 0;
+}
+
+#logoLink {
+   width: 300px;
+   height: 150px;
+   margin-top: -50px;
+   text-decoration: none;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+h1 {
+   margin: 0;
+   margin-top: 10px;
+   margin-bottom: -70px;
+   color: #d04f4f;
+   font-family: DM Sans;
+   font-weight: 700;
+   font-size: 3rem;
+}
+
+.search {
+   display: flex;
+   flex-direction: row;
+   position: relative;
+
+   &__input {
+      width: 100%;
+      height: 69px;
+      background-color: $primary;
+      border-radius: 5px;
+      border: none;
+      padding-left: 20px;
+      margin: 10px 0;
+      font-size: 1.5rem;
+      @extend .lato400;
+      transition: all 0.4s ease;
+
+      &::placeholder {
+         color: rgba(0, 0, 0, 0.37);
+      }
+
+      &:hover {
+         box-shadow: 0 0 0.7rem $primary, 0 0 1.3rem $primary, 0 0 2rem $primary, 0 0 2.8rem $primary;
+      }
+      &:focus {
+         box-shadow: 0 0 0.7rem $primary, 0 0 1.3rem $primary, 0 0 2rem $primary, 0 0 2.8rem $primary;
+         outline-style: none;
+      }
+   }
+
+   &__logo {
+      position: absolute;
+      right: 10px;
+      top: 30px;
+      font-size: 2.5rem;
+      font-weight: lighter;
+      cursor: pointer;
+   }
+}
+
+.inputOpen {
+   animation: inputOpen 0.4s forwards;
+}
+
+@keyframes inputOpen {
+   0% {
+      width: 170px;
+   }
+   100% {
+      width: 662px;
+   }
+}
+
+.inputClose {
+   animation: inputClose 0.7s forwards;
+}
+
+@keyframes inputClose {
+   0% {
+      width: 662px;
+   }
+   100% {
+      width: 170px;
+   }
+}
+
+.animOpen {
+   animation: animOpen 0.4s forwards;
+}
+
+@keyframes animOpen {
+   0% {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      opacity: 0;
+   }
+   100% {
+      visibility: visible;
+      width: 667px;
+      height: auto;
+      max-height: 335px;
+      opacity: 1;
+   }
+}
+.animClose {
+   animation: animClose 0.7s forwards;
+}
+
+@keyframes animClose {
+   0% {
+      visibility: visible;
+      width: 667px;
+      height: auto;
+      opacity: 1;
+   }
+   10% {
+      opacity: 0;
+      visibility: hidden;
+   }
+   100% {
+      width: 0;
+      height: 0;
+   }
+}
