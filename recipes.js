@@ -1760,8 +1760,10 @@ const recipes = [
    },
 ];
 
-// Input de recherche principale
+export { recipes };
 
+// Input de recherche principale
+/*
 const input = document.querySelector(".search__input");
 
 // Injection des recettes dans le HTML
@@ -1852,4 +1854,4 @@ recipes.forEach((recipe) => {
    recipeSample.appendChild(recipeSampleFoot);
 
    recipeList.appendChild(recipeSample);
-});
+});*/
