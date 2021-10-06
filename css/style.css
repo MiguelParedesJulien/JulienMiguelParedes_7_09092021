@@ -13,6 +13,16 @@ body {
   position: relative;
 }
 
+.error {
+  display: none;
+  font-size: 2rem;
+  color: #3282f7;
+}
+
+label {
+  display: none;
+}
+
 :root {
   font-size: 12px;
 }
@@ -32,7 +42,7 @@ body {
   font-weight: 400;
 }
 
-.lato700, .recipes__sample__foot-details .ingredient, .recipes__sample__foot-title .time, .filters__ustensiles__head-input, .filters__appareil__head-input, .filters__ingredients__head-input, .tag__red__item, .tag__green__item, .tag__blue__item {
+.lato700, .recipes__sample__foot-details .ingredient, .recipes__sample__foot-title .time, .filters__ustensiles__head-input, .filters__appareil__head-input, .filters__ingredients__head-input, .tag__red__item, .tag__green__item, .tag__blue__item, .error {
   font-family: lato;
   font-weight: 700;
 }

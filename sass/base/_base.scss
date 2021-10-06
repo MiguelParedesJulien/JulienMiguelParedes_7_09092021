@@ -6,3 +6,14 @@ body {
    font-size: 12px;
    position: relative;
 }
+
+.error {
+   display: none;
+   font-size: 2rem;
+   color: $secondary;
+   @extend .lato700;
+}
+
+label {
+   display: none;
+}
