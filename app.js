@@ -114,7 +114,7 @@ const recipeSamples = document.querySelectorAll(".recipes__sample");
 
 let filteredRecipes = [];
 
-// Algorithme 1 : Utilisation de filter
+// Algorithme : Utilisation de filter
 
 function getInputSearchResults() {
    return recipes.filter((obj) => {
@@ -135,31 +135,6 @@ function getInputSearchResults() {
       return true;
    });
 }
-
-// Algorithme de recherche avec l'utilisation de forEach
-
-/*function getInputSearchResults() {
-   let tableauDeRecettes = [];
-
-   recipes.forEach((obj) => {
-      if (input.value.length > 2) {
-         // Si la valeur saisie dans l'input existe dans le titre, la description ou un ingredient de la recette, la recette reste apparente, sinon elle disparaît
-         if (
-            obj.name.toLowerCase().includes(input.value.toLowerCase()) ||
-            obj.description.toLowerCase().includes(input.value.toLowerCase()) ||
-            obj.ingredients
-               .map((ing) => ing.ingredient.toLowerCase())
-               .join(" ")
-               .includes(input.value.toLowerCase())
-         ) {
-            tableauDeRecettes.push(obj);
-         }
-      } else {
-         tableauDeRecettes.push(obj);
-      }
-   });
-   return tableauDeRecettes;
-}*/
 
 function getTagsSearchResults() {
    return recipes.filter((obj) => {
