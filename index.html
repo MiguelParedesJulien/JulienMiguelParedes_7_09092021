@@ -20,16 +20,16 @@
       </header>
 
       <main>
-         <section class="search">
+         <div class="search">
             <input type="text" class="search__input" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette" />
             <i class="fas fa-search search__logo"></i>
-         </section>
-         <section class="tag">
+         </div>
+         <div class="tag">
             <div class="tag__blue"></div>
             <div class="tag__green"></div>
             <div class="tag__red"></div>
-         </section>
-         <section class="filters">
+         </div>
+         <div class="filters">
             <div class="filters__ingredients">
                <div class="filters__ingredients__head">
                   <input type="text" class="filters__ingredients__head-input" placeholder="Ingrédients" maxlength="15" />
@@ -54,13 +54,12 @@
 
                <ul class="filters__ustensiles__list"></ul>
             </div>
-         </section>
+         </div>
          <div class="recipes">
             <p class="error">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>
          </div>
       </main>
 
       <script type="module" src="app.js"></script>
-      <!--<script src="recipes.js"></script> !-->
    </body>
 </html>

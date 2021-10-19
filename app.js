@@ -99,7 +99,7 @@ recipes.forEach((recipe) => {
 const ingredientsList = document.querySelector(".filters__ingredients__list");
 const appliancesList = document.querySelector(".filters__appareil__list");
 const ustensilsList = document.querySelector(".filters__ustensiles__list");
-const filtersIngredientsDiv = document.querySelector(".filters__ingredients");
+//const filtersIngredientsDiv = document.querySelector(".filters__ingredients");
 
 // Tableaux pour stocker différents tags ingrédients appareils et ustensiles
 let ingTags = [];
@@ -109,7 +109,9 @@ let ustTags = [];
 // Affichage des recettes selon la saisie dans l'input de recherche
 
 input.addEventListener("input", recipeFilterByInput);
+
 // Selection de toutes les recettes présentes dans le html
+
 const recipeSamples = document.querySelectorAll(".recipes__sample");
 
 let filteredRecipes = [];
@@ -175,7 +177,6 @@ function getTagsSearchResults() {
             for (let i = 0; i < obj.ingredients.length; i++) {
                if (obj.ingredients[i].ingredient.toLowerCase().includes(ingTag)) {
                   compteurIng++;
-                  // console.log(compteurIng);
                }
                if (compteurIng === ingTags.length) {
                   testIng = true;
@@ -196,7 +197,6 @@ function getTagsSearchResults() {
             for (let i = 0; i < obj.ustensils.length; i++) {
                if (obj.ustensils[i].toLowerCase().includes(ustTag)) {
                   compteurUst++;
-                  // console.log(compteurIng);
                }
                if (compteurUst == ustTags.length) {
                   testUst = true;
@@ -206,7 +206,6 @@ function getTagsSearchResults() {
             }
          });
       }
-      // console.log(compteurIng);
 
       return testIng && testApp && testUst;
    });
@@ -259,8 +258,6 @@ function refreshSearch() {
          errorMsg.style.display = "none";
       }
    }
-   console.log();
-
    error();
 }
 
@@ -343,8 +340,6 @@ function createNewHtmlTag(tagChoisi, color) {
 
       refreshSearch();
    }
-
-   console.log(nouveauTag);
 
    showIngredientsInput();
 }
@@ -500,7 +495,7 @@ document.addEventListener("click", function (e) {
       hideIngredients();
    }
 
-   if (e.target.classList.contains("filters__ingredients__head-input")) {
+   if (e.target.classList.contains("filters__ingredients__head-input") || e.target.classList.contains("filters__ingredients__head-arrow")) {
       showIngredients();
    }
 });
@@ -560,7 +555,7 @@ document.addEventListener("click", function (e) {
       hideAppliances();
    }
 
-   if (e.target.classList.contains("filters__appareil__head-input")) {
+   if (e.target.classList.contains("filters__appareil__head-input") || e.target.classList.contains("filters__appareil__head-arrow")) {
       showAppliances();
    }
 });
@@ -625,7 +620,7 @@ document.addEventListener("click", function (e) {
       hideUstensils();
    }
 
-   if (e.target.classList.contains("filters__ustensiles__head")) {
+   if (e.target.classList.contains("filters__ustensiles__head") || e.target.classList.contains("filters__ustensiles__head-arrow")) {
       showUstensils();
    }
 });
@@ -650,8 +645,6 @@ function searchIngredients() {
       li.innerHTML = ingredient;
       ingredientsList.appendChild(li);
    });
-
-   // console.log(ingredientsArray);
 }
 
 searchIngredients();
@@ -674,7 +667,6 @@ ingredientsInput.addEventListener("input", hideOrShowIngredients);
 function filterIngredients() {
    const ingredients = filteredRecipes.map((obj) => obj.ingredients.map((ing) => ing.ingredient.toLowerCase())).flat();
    const uniqueList = ingredients.filter((item, index) => ingredients.indexOf(item) == index);
-   // console.log(uniqueList);
 
    ingredientsList.innerHTML = "";
 
@@ -712,7 +704,6 @@ searchAppliances();
 function filterAppliances() {
    const appliances = filteredRecipes.map((obj) => obj.appliance.toLowerCase());
    const uniqueList = appliances.filter((item, index) => appliances.indexOf(item) == index);
-   // console.log(uniqueList);
 
    appliancesList.innerHTML = "";
 
@@ -760,8 +751,6 @@ function searchUstensils() {
       li.innerHTML = ustensil;
       ustensilsList.appendChild(li);
    });
-
-   // console.log(ustensilsArray);
 }
 
 searchUstensils();

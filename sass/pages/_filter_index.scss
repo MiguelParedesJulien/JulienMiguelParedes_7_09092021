@@ -151,6 +151,13 @@
    box-shadow: 0px 0px 5px $secondary, 0px 0px 10px $secondary, 0px 0px 15px $secondary;
 }
 
+.greenShadow {
+   box-shadow: 0px 0px 5px $tertiary, 0px 0px 10px $tertiary, 0px 0px 15px $tertiary;
+}
+
+.redShadow {
+   box-shadow: 0px 0px 5px $quartiary, 0px 0px 10px $quartiary, 0px 0px 15px $quartiary;
+}
 // .noShadow {
 //     box-shadow: unset;
 // }
@@ -179,12 +186,10 @@
       &:hover {
          box-shadow: 0px 0px 5px $secondary, 0px 0px 10px $secondary, 0px 0px 15px $secondary;
       }
-      // &:focus {
-      //     box-shadow: 0px 0px 5px $secondary,
-      //                 0px 0px 10px $secondary,
-      //                 0px 0px 15px $secondary;
-      //                 transform: scale(1.2);
-      // }
+      &:focus {
+         box-shadow: 0px 0px 5px $secondary, 0px 0px 10px $secondary, 0px 0px 15px $secondary;
+         //transform: scale(1.2);
+      }
 
       &__head {
          display: flex;
@@ -253,7 +258,7 @@
          // z-index: 1;
          position: absolute;
          top: 77px;
-         overflow: hidden;
+         overflow: auto;
          background-color: $secondary;
          z-index: 100;
 
@@ -267,7 +272,7 @@
             list-style-type: none;
             width: 33%;
             // padding-bottom: 5px;
-            max-height: 50px;
+            //max-height: 50px;
             cursor: pointer;
             // z-index: 10000;
          }
@@ -280,6 +285,7 @@
       display: flex;
       flex-direction: column;
       height: max-content;
+      cursor: pointer;
       width: auto;
       margin-left: 20px;
       transition: all 0.4s ease;
@@ -355,6 +361,10 @@
          width: 0;
          height: 0;
          transition: all 0.5s;
+         position: absolute;
+         margin-top: 66px;
+         overflow: auto;
+         background-color: $tertiary;
          z-index: 100;
 
          &-item {
@@ -375,6 +385,7 @@
       display: flex;
       flex-direction: column;
       height: max-content;
+      cursor: pointer;
       width: auto;
       margin-left: 20px;
       transition: all 0.4s ease;
@@ -444,15 +455,11 @@
          // max-width: 667px;
          // max-height: 397px;
          padding-left: 15px;
-         margin-top: -10px;
+         margin-top: 66px;
+         position: absolute;
          line-height: 2.5rem;
          transition: all 0.5s ease;
-
-         // height: 0;
-         // width: 0;
-         // overflow: hidden;
-
-         // display: none;
+         overflow: auto;
          visibility: hidden;
          width: 0;
          height: 0;
@@ -468,5 +475,35 @@
             cursor: pointer;
          }
       }
+   }
+}
+
+@media (max-width: 576px) {
+   body {
+      margin: 2px;
+   }
+   .filters {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .filters__appareil,
+   .filters__ustensiles {
+      margin-left: 0;
+      margin-top: 10px;
+   }
+
+   .search__input {
+      text-overflow: ellipsis;
+      z-index: 1;
+   }
+
+   .recipes__sample,
+   .recipes__sample__foot {
+      width: 100% !important;
+   }
+
+   .recipes__sample__foot-details {
+      margin-top: -15px !important;
    }
 }

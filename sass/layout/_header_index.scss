@@ -94,6 +94,12 @@ h1 {
       font-weight: lighter;
       cursor: pointer;
    }
+
+   @media (max-width: 576px) {
+      &__logo {
+         display: none;
+      }
+   }
 }
 
 .inputOpen {

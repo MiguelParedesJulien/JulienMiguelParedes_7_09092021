@@ -116,6 +116,11 @@ h1 {
   font-weight: lighter;
   cursor: pointer;
 }
+@media (max-width: 576px) {
+  .search__logo {
+    display: none;
+  }
+}
 
 .inputOpen {
   animation: inputOpen 0.4s forwards;
@@ -309,6 +314,14 @@ h1 {
   box-shadow: 0px 0px 5px #3282f7, 0px 0px 10px #3282f7, 0px 0px 15px #3282f7;
 }
 
+.greenShadow {
+  box-shadow: 0px 0px 5px #68d9a4, 0px 0px 10px #68d9a4, 0px 0px 15px #68d9a4;
+}
+
+.redShadow {
+  box-shadow: 0px 0px 5px #ed6454, 0px 0px 10px #ed6454, 0px 0px 15px #ed6454;
+}
+
 .filters {
   margin-top: 20px;
   display: flex;
@@ -330,6 +343,9 @@ h1 {
   position: relative;
 }
 .filters__ingredients:hover {
+  box-shadow: 0px 0px 5px #3282f7, 0px 0px 10px #3282f7, 0px 0px 15px #3282f7;
+}
+.filters__ingredients:focus {
   box-shadow: 0px 0px 5px #3282f7, 0px 0px 10px #3282f7, 0px 0px 15px #3282f7;
 }
 .filters__ingredients__head {
@@ -385,7 +401,7 @@ h1 {
   transition: all 0.5s;
   position: absolute;
   top: 77px;
-  overflow: hidden;
+  overflow: auto;
   background-color: #3282f7;
   z-index: 100;
 }
@@ -396,7 +412,6 @@ h1 {
   font-size: 1.5rem;
   list-style-type: none;
   width: 33%;
-  max-height: 50px;
   cursor: pointer;
 }
 .filters__appareil {
@@ -406,6 +421,7 @@ h1 {
   display: flex;
   flex-direction: column;
   height: max-content;
+  cursor: pointer;
   width: auto;
   margin-left: 20px;
   transition: all 0.4s ease;
@@ -467,6 +483,10 @@ h1 {
   width: 0;
   height: 0;
   transition: all 0.5s;
+  position: absolute;
+  margin-top: 66px;
+  overflow: auto;
+  background-color: #68d9a4;
   z-index: 100;
 }
 .filters__appareil__list-item {
@@ -483,6 +503,7 @@ h1 {
   display: flex;
   flex-direction: column;
   height: max-content;
+  cursor: pointer;
   width: auto;
   margin-left: 20px;
   transition: all 0.4s ease;
@@ -540,9 +561,11 @@ h1 {
   background-color: #ed6454;
   color: #fff;
   padding-left: 15px;
-  margin-top: -10px;
+  margin-top: 66px;
+  position: absolute;
   line-height: 2.5rem;
   transition: all 0.5s ease;
+  overflow: auto;
   visibility: hidden;
   width: 0;
   height: 0;
@@ -556,6 +579,36 @@ h1 {
   cursor: pointer;
 }
 
+@media (max-width: 576px) {
+  body {
+    margin: 2px;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filters__appareil,
+.filters__ustensiles {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .search__input {
+    text-overflow: ellipsis;
+    z-index: 1;
+  }
+
+  .recipes__sample,
+.recipes__sample__foot {
+    width: 100% !important;
+  }
+
+  .recipes__sample__foot-details {
+    margin-top: -15px !important;
+  }
+}
 @keyframes recipeAnim {
   0% {
     opacity: 0;
