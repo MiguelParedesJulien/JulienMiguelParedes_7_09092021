@@ -1,7 +1,5 @@
 import { recipes } from "./recipes.js";
 
-console.log("recipes");
-
 // Input de recherche principale
 
 const input = document.querySelector(".search__input");
@@ -36,7 +34,6 @@ recipes.forEach((recipe) => {
    time.setAttribute("class", "time");
    time.innerHTML = `<i class="far fa-clock"></i><span>${recipe.time} min</span>`;
    time.setAttribute("tabindex", "0");
-   // time.setAttribute("aria-label", `Temps de préparation ${recipe.time} minutes`);
 
    const instruction = document.createElement("p");
    instruction.setAttribute("class", "instruction");
@@ -52,18 +49,10 @@ recipes.forEach((recipe) => {
       const ingredient = document.createElement("li");
       ingredient.setAttribute("class", "ingredient");
       ingredient.setAttribute("tabindex", "0");
-      // ingredient.setAttribute("aria-label", aliment.ingredient);
       const quantity = document.createElement("span");
       quantity.setAttribute("class", "quantity");
-      // quantity.setAttribute("tabindex", "0");
-      // quantity.setAttribute("aria-label", aliment.quantity);
-      // const unit = document.createElement("p");
-      // unit.setAttribute("class", "unit");
-      // unit.setAttribute("tabindex", "0");
-      // quantity.setAttribute("aria-label", `${aliment.quantity} ${aliment.unit}`);
 
       ingredient.innerHTML = aliment.ingredient;
-      // unit.innerText = aliment.unit;
 
       if (aliment.quantity === undefined) {
          aliment.quantity = "";
@@ -72,12 +61,10 @@ recipes.forEach((recipe) => {
          aliment.unit = "";
       }
       quantity.innerHTML = `${aliment.quantity} ${aliment.unit}`;
-      // if (aliment.unit === "grammes" || aliment.unit === "gramme") {
-      //     aliment.unit = "gr";
-      // }
+
       ingredient.appendChild(quantity);
       details.appendChild(ingredient);
-      // details.appendChild(unit);
+
       ingredientAndQuantity.appendChild(details);
    });
 
@@ -150,7 +137,6 @@ function getTagsSearchResults() {
             for (let i = 0; i < obj.ingredients.length; i++) {
                if (obj.ingredients[i].ingredient.toLowerCase().includes(ingTag)) {
                   compteurIng++;
-                  // console.log(compteurIng);
                }
                if (compteurIng === ingTags.length) {
                   testIng = true;
@@ -171,7 +157,6 @@ function getTagsSearchResults() {
             for (let i = 0; i < obj.ustensils.length; i++) {
                if (obj.ustensils[i].toLowerCase().includes(ustTag)) {
                   compteurUst++;
-                  // console.log(compteurIng);
                }
                if (compteurUst == ustTags.length) {
                   testUst = true;
@@ -181,7 +166,6 @@ function getTagsSearchResults() {
             }
          });
       }
-      // console.log(compteurIng);
 
       return testIng && testApp && testUst;
    });
@@ -234,8 +218,6 @@ function refreshSearch() {
          errorMsg.style.display = "none";
       }
    }
-   console.log();
-
    error();
 }
 
@@ -249,7 +231,6 @@ function createNewTag(tagChoisi, color) {
       case "blue":
          if (!ingTags.includes(tagChoisi)) {
             ingTags.push(tagChoisi.toLowerCase());
-            console.log(ingTags);
             createNewHtmlTag(tagChoisi, color);
          }
          break;
@@ -260,7 +241,6 @@ function createNewTag(tagChoisi, color) {
          }
          break;
       case "red":
-         console.log(ustTags);
          if (!ustTags.includes(tagChoisi)) {
             ustTags.push(tagChoisi.toLowerCase());
             createNewHtmlTag(tagChoisi, color);
@@ -294,8 +274,6 @@ function createNewHtmlTag(tagChoisi, color) {
    tag.appendChild(deleteButton);
    tagList.appendChild(tag);
 
-   // input.value = "";
-
    deleteButton.addEventListener("click", deleteTag);
 
    function deleteTag() {
@@ -318,9 +296,6 @@ function createNewHtmlTag(tagChoisi, color) {
 
       refreshSearch();
    }
-
-   console.log(nouveauTag);
-
    showIngredientsInput();
 }
 
@@ -328,11 +303,9 @@ function addTagAfterClick() {
    if (input.value.length > 0) {
       createNewTag(input.value, "blue");
    }
-   console.log(input.value);
 }
 
 function addTagAfterKeypress() {
-   // 13 = touche entrée
    if (input.value.length > 0 && event.which === 13) {
       createNewTag(input.value, "blue");
    }
@@ -382,8 +355,6 @@ function showIngredientsInput() {
       ingredientsList.appendChild(li);
    });
 }
-
-// showIngredientsInput();
 
 // Fonctions pour ouverture et fermeture des tags ingrédients, appareils et ustensiles
 
@@ -625,8 +596,6 @@ function searchIngredients() {
       li.innerHTML = ingredient;
       ingredientsList.appendChild(li);
    });
-
-   // console.log(ingredientsArray);
 }
 
 searchIngredients();
@@ -649,7 +618,6 @@ ingredientsInput.addEventListener("input", hideOrShowIngredients);
 function filterIngredients() {
    const ingredients = filteredRecipes.map((obj) => obj.ingredients.map((ing) => ing.ingredient.toLowerCase())).flat();
    const uniqueList = ingredients.filter((item, index) => ingredients.indexOf(item) == index);
-   // console.log(uniqueList);
 
    ingredientsList.innerHTML = "";
 
@@ -660,7 +628,6 @@ function filterIngredients() {
       li.innerHTML = ingredient;
       ingredientsList.appendChild(li);
    });
-   console.log();
 }
 
 // Affichage tableau tags appareils
@@ -687,7 +654,6 @@ searchAppliances();
 function filterAppliances() {
    const appliances = filteredRecipes.map((obj) => obj.appliance.toLowerCase());
    const uniqueList = appliances.filter((item, index) => appliances.indexOf(item) == index);
-   // console.log(uniqueList);
 
    appliancesList.innerHTML = "";
 
@@ -735,8 +701,6 @@ function searchUstensils() {
       li.innerHTML = ustensil;
       ustensilsList.appendChild(li);
    });
-
-   // console.log(ustensilsArray);
 }
 
 searchUstensils();
@@ -744,7 +708,6 @@ searchUstensils();
 function filterUstensils() {
    const ustensils = filteredRecipes.map((obj) => obj.ustensils.map((str) => str.toLowerCase())).flat();
    const uniqueList = ustensils.filter((item, index) => ustensils.indexOf(item) == index);
-   // console.log(uniqueList);
 
    ustensilsList.innerHTML = "";
 
@@ -755,7 +718,6 @@ function filterUstensils() {
       li.innerHTML = ustensil;
       ustensilsList.appendChild(li);
    });
-   console.log();
 }
 
 //  Auto-suggestion selon texte tapé dans input ustensiles
@@ -772,5 +734,3 @@ function hideOrShowUstensiles() {
    });
 }
 ustensilsInput.addEventListener("input", hideOrShowUstensiles);
-
-console.log(ingTags.length);
