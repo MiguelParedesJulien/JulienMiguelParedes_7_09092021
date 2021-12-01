@@ -85,6 +85,7 @@ recipes.forEach((recipe) => {
 const ingredientsList = document.querySelector(".filters__ingredients__list");
 const appliancesList = document.querySelector(".filters__appareil__list");
 const ustensilsList = document.querySelector(".filters__ustensiles__list");
+const tagInput = document.querySelector(".filters");
 
 // Tableaux pour stocker différents tags ingrédients appareils et ustensiles
 let ingTags = [];
@@ -246,10 +247,10 @@ function refreshSearch() {
    error();
 }
 
-// Création des tags de recherche supplémentaire
+// Création des tags de recherche supplémentaire (ingrédients, ustensiles et appareils)
 
 const enterButton = document.querySelector(".search__logo");
-let nouveauTag = input.value;
+let nouveauTag = tagInput.value;
 
 function createNewTag(tagChoisi, color) {
    switch (color) {
@@ -281,7 +282,7 @@ function createNewTag(tagChoisi, color) {
 
 function createNewHtmlTag(tagChoisi, color) {
    const tagList = document.querySelector(`.tag__${color}`);
-   let nouveauTag = tagChoisi;
+   //let nouveauTag = tagChoisi;
 
    let tag = document.createElement("div");
    tag.setAttribute("class", "tag__" + color + "__item");
@@ -326,14 +327,14 @@ function createNewHtmlTag(tagChoisi, color) {
 }
 
 function addTagAfterClick() {
-   if (input.value.length > 0) {
-      createNewTag(input.value, "blue");
+   if (nouveauTag.value.length > 0) {
+      createNewTag(nouveauTag.value, "blue");
    }
 }
 
 function addTagAfterKeypress() {
-   if (input.value.length > 0 && event.which === 13) {
-      createNewTag(input.value, "blue");
+   if (nouveauTag.value.length > 0 && event.which === 13) {
+      createNewTag(nouveauTag.value, "blue");
    }
 }
 
@@ -533,7 +534,6 @@ document.addEventListener("click", function (e) {
    if (!e.target.classList.contains("filters__appareil__list-item") && !e.target.classList.contains("filters__appareil__head-input") && appliancesList.classList.contains("animOpen")) {
       hideAppliances();
    }
-
    if (e.target.classList.contains("filters__appareil__head-input") || e.target.classList.contains("filters__appareil__head-arrow")) {
       showAppliances();
    }
@@ -589,11 +589,6 @@ function hideUstensils() {
    noRedShadow();
 }
 
-ustensilsInput.addEventListener("focus", hideIngredients);
-ustensilsInput.addEventListener("focus", hideAppliances);
-ustensilsInput.addEventListener("focus", showUstensils);
-ustensilsArrow.addEventListener("click", showUstensils);
-
 document.addEventListener("click", function (e) {
    if (!e.target.classList.contains("filters__ustensiles__list-item") && !e.target.classList.contains("filters__ustensiles__head-input") && ustensilsList.classList.contains("animOpen")) {
       hideUstensils();
@@ -603,6 +598,11 @@ document.addEventListener("click", function (e) {
       showUstensils();
    }
 });
+
+ustensilsInput.addEventListener("focus", hideIngredients);
+ustensilsInput.addEventListener("focus", hideAppliances);
+ustensilsInput.addEventListener("focus", showUstensils);
+ustensilsArrow.addEventListener("click", showUstensils);
 
 // Affichage tableau tags ingrédients
 
