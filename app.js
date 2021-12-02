@@ -282,7 +282,6 @@ function createNewTag(tagChoisi, color) {
 
 function createNewHtmlTag(tagChoisi, color) {
    const tagList = document.querySelector(`.tag__${color}`);
-   //let nouveauTag = tagChoisi;
 
    let tag = document.createElement("div");
    tag.setAttribute("class", "tag__" + color + "__item");
@@ -382,8 +381,6 @@ function showIngredientsInput() {
       ingredientsList.appendChild(li);
    });
 }
-
-// showIngredientsInput();
 
 // Fonctions pour ouverture et fermeture des tags ingrédients, appareils et ustensiles
 
