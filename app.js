@@ -104,7 +104,7 @@ let filteredRecipes = [];
 
 // Algorithme 1 : Utilisation de filter
 
-/*function getInputSearchResults() {
+function getInputSearchResults() {
    return recipes.filter((obj) => {
       if (input.value.length > 2) {
          // Si la valeur saisie dans l'input existe dans le titre, la description ou un ingredient de la recette, la recette reste apparente, sinon elle disparaît
@@ -122,11 +122,11 @@ let filteredRecipes = [];
       }
       return true;
    });
-}*/
+}
 
 // Algorithme de recherche avec l'utilisation de forEach
 
-function getInputSearchResults() {
+/*function getInputSearchResults() {
    let tableauDeRecettes = [];
 
    recipes.forEach((obj) => {
@@ -147,7 +147,7 @@ function getInputSearchResults() {
       }
    });
    return tableauDeRecettes;
-}
+}*/
 
 function getTagsSearchResults() {
    return recipes.filter((obj) => {
