@@ -87,7 +87,6 @@ const ingredientsList = document.querySelector(".filters__ingredients__list");
 const appliancesList = document.querySelector(".filters__appareil__list");
 const ustensilsList = document.querySelector(".filters__ustensiles__list");
 const tagInput = document.querySelector(".filters");
-//const filtersIngredientsDiv = document.querySelector(".filters__ingredients");
 
 // Tableaux pour stocker différents tags ingrédients appareils et ustensiles
 let ingTags = [];
