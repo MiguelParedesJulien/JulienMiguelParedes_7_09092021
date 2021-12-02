@@ -86,7 +86,8 @@ recipes.forEach((recipe) => {
 const ingredientsList = document.querySelector(".filters__ingredients__list");
 const appliancesList = document.querySelector(".filters__appareil__list");
 const ustensilsList = document.querySelector(".filters__ustensiles__list");
-const filtersIngredientsDiv = document.querySelector(".filters__ingredients");
+const tagInput = document.querySelector(".filters");
+//const filtersIngredientsDiv = document.querySelector(".filters__ingredients");
 
 // Tableaux pour stocker différents tags ingrédients appareils et ustensiles
 let ingTags = [];
@@ -224,7 +225,7 @@ function refreshSearch() {
 // Création des tags de recherche supplémentaire
 
 const enterButton = document.querySelector(".search__logo");
-let nouveauTag = input.value;
+let nouveauTag = tagInput.value;
 
 function createNewTag(tagChoisi, color) {
    switch (color) {
@@ -256,7 +257,7 @@ function createNewTag(tagChoisi, color) {
 
 function createNewHtmlTag(tagChoisi, color) {
    const tagList = document.querySelector(`.tag__${color}`);
-   let nouveauTag = tagChoisi;
+   //let nouveauTag = tagChoisi;
 
    let tag = document.createElement("div");
    tag.setAttribute("class", "tag__" + color + "__item");
@@ -300,14 +301,14 @@ function createNewHtmlTag(tagChoisi, color) {
 }
 
 function addTagAfterClick() {
-   if (input.value.length > 0) {
-      createNewTag(input.value, "blue");
+   if (nouveauTag.value.length > 0) {
+      createNewTag(nouveauTag.value, "blue");
    }
 }
 
 function addTagAfterKeypress() {
-   if (input.value.length > 0 && event.which === 13) {
-      createNewTag(input.value, "blue");
+   if (nouveauTag.value.length > 0 && event.which === 13) {
+      createNewTag(nouveauTag.value, "blue");
    }
 }
 
