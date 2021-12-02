@@ -222,7 +222,7 @@ function refreshSearch() {
    error();
 }
 
-// Création des tags de recherche supplémentaire
+// Création des tags de recherche supplémentaire (ingrédients, ustensiles et appareils)
 
 const enterButton = document.querySelector(".search__logo");
 let nouveauTag = tagInput.value;
@@ -257,7 +257,6 @@ function createNewTag(tagChoisi, color) {
 
 function createNewHtmlTag(tagChoisi, color) {
    const tagList = document.querySelector(`.tag__${color}`);
-   //let nouveauTag = tagChoisi;
 
    let tag = document.createElement("div");
    tag.setAttribute("class", "tag__" + color + "__item");
@@ -297,6 +296,7 @@ function createNewHtmlTag(tagChoisi, color) {
 
       refreshSearch();
    }
+
    showIngredientsInput();
 }
 
@@ -447,7 +447,7 @@ document.addEventListener("click", function (e) {
       hideIngredients();
    }
 
-   if (e.target.classList.contains("filters__ingredients__head-input")) {
+   if (e.target.classList.contains("filters__ingredients__head-input") || e.target.classList.contains("filters__ingredients__head-arrow")) {
       showIngredients();
    }
 });
@@ -506,8 +506,7 @@ document.addEventListener("click", function (e) {
    if (!e.target.classList.contains("filters__appareil__list-item") && !e.target.classList.contains("filters__appareil__head-input") && appliancesList.classList.contains("animOpen")) {
       hideAppliances();
    }
-
-   if (e.target.classList.contains("filters__appareil__head-input")) {
+   if (e.target.classList.contains("filters__appareil__head-input") || e.target.classList.contains("filters__appareil__head-arrow")) {
       showAppliances();
    }
 });
@@ -562,20 +561,20 @@ function hideUstensils() {
    noRedShadow();
 }
 
-ustensilsInput.addEventListener("focus", hideIngredients);
-ustensilsInput.addEventListener("focus", hideAppliances);
-ustensilsInput.addEventListener("focus", showUstensils);
-ustensilsArrow.addEventListener("click", showUstensils);
-
 document.addEventListener("click", function (e) {
    if (!e.target.classList.contains("filters__ustensiles__list-item") && !e.target.classList.contains("filters__ustensiles__head-input") && ustensilsList.classList.contains("animOpen")) {
       hideUstensils();
    }
 
-   if (e.target.classList.contains("filters__ustensiles__head")) {
+   if (e.target.classList.contains("filters__ustensiles__head") || e.target.classList.contains("filters__ustensiles__head-arrow")) {
       showUstensils();
    }
 });
+
+ustensilsInput.addEventListener("focus", hideIngredients);
+ustensilsInput.addEventListener("focus", hideAppliances);
+ustensilsInput.addEventListener("focus", showUstensils);
+ustensilsArrow.addEventListener("click", showUstensils);
 
 // Affichage tableau tags ingrédients
 
